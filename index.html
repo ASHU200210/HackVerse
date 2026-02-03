@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hackathon'24</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script defer src="script.js"></script>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+  <h2>🚀 Hackathon'24</h2>
+  <a onclick="showSection('home')">Home</a>
+  <a onclick="showSection('dashboard')">Dashboard</a>
+  <a onclick="showSection('create')">Create Case</a>
+  <a onclick="showSection('reports')">Reports</a>
+  <a onclick="showSection('admin')">Admin</a>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <h1>Build. Compete. Win.</h1>
+      <p>Welcome to Hackathon'24 Platform</p>
+      <button class="btn-gradient" onclick="showSection('dashboard')">Enter Platform</button>
+    </div>
+  </section>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="page">
+    <h2>Dashboard Overview</h2>
+
+    <div class="card-grid">
+      <div class="stat-card">
+        <h3>Total</h3>
+        <p id="total">0</p>
+      </div>
+      <div class="stat-card approved">
+        <h3>Approved</h3>
+        <p id="approved">0</p>
+      </div>
+      <div class="stat-card pending">
+        <h3>Pending</h3>
+        <p id="pending">0</p>
+      </div>
+      <div class="stat-card rejected">
+        <h3>Rejected</h3>
+        <p id="rejected">0</p>
+      </div>
+    </div>
+
+    <!-- Pega Case List Embed -->
+    <div class="embed-box">
+      <h3>Pega Case List</h3>
+      <!-- Embed Pega Constellation Case List Here -->
+      <script src='https://7x6hhjuu.pegace.net/prweb/PRRestService/c11nsvc/v1/pega-embed.js' ></script>
+<pega-embed id='theEmbed' action='createCase' caseTypeID='OH-HackVerse-Work-HackathonRegistration' casePage='assignment' appAlias='hack-verse' pegaServerUrl='https://7x6hhjuu.pegace.net/prweb/' autoReauth='true' authService='SSO' deferLoad='true' clientId='59400566665447529785' style='width:100%'>
+</pega-embed>
+
+    </div>
+  </section>
+
+  <!-- CREATE CASE -->
+  <section id="create" class="page">
+    <h2>Create Hackathon Case</h2>
+
+    <form class="glass-form">
+      <input type="text" placeholder="Team Name">
+      <textarea placeholder="Participant Details"></textarea>
+      <select>
+        <option>Select Event</option>
+        <option>AI Challenge</option>
+        <option>Web Innovation</option>
+      </select>
+      <input type="file">
+      <button class="btn-gradient">Submit</button>
+    </form>
+
+    <!-- Pega Case Creation Embed -->
+    <div class="embed-box">
+      <h3>Pega Case Creation UI</h3>
+      <!-- Embed Pega Mashup Here -->
+      <iframe></iframe>
+    </div>
+  </section>
+
+  <!-- REPORTS -->
+  <section id="reports" class="page">
+    <h2>Reports & Insights</h2>
+
+    <canvas id="barChart"></canvas>
+    <canvas id="pieChart"></canvas>
+
+    <div class="embed-box">
+      <h3>Pega Insight Reports</h3>
+      <!-- Embed Pega Insight Here -->
+      <iframe></iframe>
+    </div>
+  </section>
+
+  <!-- ADMIN -->
+  <section id="admin" class="page">
+    <h2>Admin Panel</h2>
+
+    <table>
+      <tr>
+        <th>Case ID</th>
+        <th>Team</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>HACK-101</td>
+        <td>Team Alpha</td>
+        <td><span class="badge approved">Approved</span></td>
+        <td>
+          <button class="btn-success">Approve</button>
+          <button class="btn-danger">Reject</button>
+        </td>
+      </tr>
+    </table>
+
+    <div class="embed-box">
+      <h3>Pega Worklist</h3>
+      <!-- Embed Pega Worklist Here -->
+      <iframe></iframe>
+    </div>
+  </section>
+
+</div>
+
+</body>
+</html>
